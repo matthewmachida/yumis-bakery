@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!--
+  Matthew Machdia (mmachida)
+  Ralen Kovara (ralenk)
+  The html file for the website for Yumi's Bakery. Contains html for a home
+  page, ordering page, and checkout/cart page. Also contains buttons to
+  navigate across pages.
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!--"Cookie" font from Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+    <!--"Rubik" font from Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <!--"Architects Daughter from Google Fonts"-->
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js"></script>
+    <title>Yumi's Bakery</title>
+  </head>
+  <body>
+    <header>
+      <!--Profile icon and shopping cart view-->
+      <button id="logo-btn"></button>
+      <button id="contact-btn"></button>
+      <!-- <button id="cart-btn"></button> -->
+      <!-- Instagram logo icons created by Freepik - Flaticon: https://www.flaticon.com/free-icon/instagram_1384063?related_id=1384031&origin=search -->
+      <button id="instagram-btn"></button>
+      <!-- <button id="purchase-btn">History</button> -->
+    </header>
+    <!-- 
+    <section id="history-page">
+      <section id="history-container">
+        <p id="history-info"></p>
+      </section>
+    </section> -->
+
+    <section id="home-page" class="viewing">
+
+      <!--Title with background image-->
+      <article id="title">
+        <h1> 🌸 Yumi's Bakery 🌸 </h1>
+      </article>
+
+      <!--Include order form, about me, etc.-->
+      <button id="home-order-btn">Order Here!</button>
+      <br>
+      <!--Short bio and story-->
+      <article id="aboutme">
+        <img id="pfp" src="img/yumipfp.png" alt="picture of me">
+        <section id="about-text">
+          <h3>About Me:</h3>
+          <p>
+            Hi! My name is Yumi Park and I am a Seattle-based baker.
+            I have been baking since middle school and this passion has stayed with me since.
+            Over the years, I have accumulated and perfected a vast collection of recipes
+            that I would love to share with you!
+          </p>
+        </section>
+      </article>
+    </section>
+
+    <section id="order-page" class="hidden">
+      <section id="order-organizer">
+        <h2>Desserts</h2>
+        <!-- <section id="search-section">
+          <input id='search-term' type='text'>
+          <button id='search-btn'>Search</button>
+        </section>
+        <section id="radio-container">
+          <input type="radio" id="small-filter" name="size" value="small">
+          <label for="small-filter">Small</label>
+          <input type="radio" id="large-filter" name="size" value="large">
+          <label for="large-filter">Large</label>
+          <input type="radio" id="customizable-filter" name="size"
+          value="custom">
+          <label for="customizable-filter">Customizable</label>
+          <button id="deselect-btn">Deselect</button>
+          <button id="toggle">Detailed</button>
+        </section> -->
+
+        <!--List of purchasable dessert items-->
+        <article id="dessert-list">
+          <!--
+            Food cards are generated on page startup - see index.js
+          -->
+        </article>
+        <br>
+        <br>
+      </section>
+      <div class="footer-spacing"></div>
+    </section>
+
+    <!-- <section id="login" class="hidden">
+      <article id="login-form-container">
+        <h2>Login Form</h2>
+        <form action="#" method="post">
+          <section class="form-group">
+            <label for="login-username">Username:</label>
+            <input type="text" id="login-username" name="username" required>
+          </section>
+          <section class="form-group">
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" name="password" required>
+          </section>
+          <button type="submit" id="login-btn">Submit</button>
+          <p id='login-message'>Enter Username and Password</p>
+        </form>
+      </article>
+    </section> -->
+
+    <section id="item-page" class="hidden">
+      <div class="center">
+        <h2 id="item-type"></h2>
+      </div>
+      <section>
+        <article class="side-column">
+          <img id="gen-dessert">
+        </article>
+        <article class="side-column" id="item-details">
+          <div>
+            <label for="flavor-select">Flavor:</label>
+            <select id="flavor-select"></select>
+    
+            <label for="quantity-input" id="quantity-label">Quantity:</label>
+            <input type="number" id="quantity-input" min="1" max="12" value="1">
+    
+            <p>Total Price:</p>
+            <p id="price-display"></p>
+    
+            <label for="customization-input" id="custom-label">Customization:</label>
+            <textarea id="customization-input"> </textarea>
+          </div>
+          
+          <!-- <p>Made By: Yumi Park</p> -->
+  
+          <button id="to-cart-btn">Add to Cart</button>
+        </article>
+      </section>
+      <br>
+      <br>
+      <button id="item-order-btn">Go Back</button>
+      <br>
+      <div class="footer-spacing"></div>
+    </section>
+
+    <footer>
+      <!--
+        CONTACT INFORMATION, API CITATIONS, CREDITS AND COPYRIGHT, ETC
+      -->
+      Made with love 💖 by Ralen Kovara, Matthew Machida, and Yumi Park
+    </footer>
+  </body>
+</html>

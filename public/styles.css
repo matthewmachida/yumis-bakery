@@ -1,0 +1,486 @@
+/*
+Matthew Machida (mmachida)
+Ralen Kovara (ralenk)
+
+styles.css provides styles for the index.html file. Contains styles that
+organize elements on the pages as well as font color, button sizes and
+simple hover animations.
+*/
+
+/* 
+  Element Styles
+*/
+
+body {
+  display: flex;
+  background-color: beige;
+  flex-direction: column;
+  background-size: cover;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('img/bakery.png');
+  background-attachment: fixed;
+  font-family: "Rubik", sans-serif;
+  text-align: center;
+  margin: 0px;
+  position: relative;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  height: 65px;
+  justify-content: flex-end;
+  /* margin-top: 20px; */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Specifically for the icon buttons in the top menu bar */
+header > button {
+  background-size: 85%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50px;
+  border: none;
+  margin: 20px;
+  height: 50px;
+  width: 50px;
+  opacity: 0.8;
+  transition: box-shadow 0.15s, opacity 0.15s;
+}
+
+header > button:hover {
+  box-shadow: 0 0 15px blanchedalmond;
+  opacity: 0.6;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-top: 100px;
+  background-color: blanchedalmond;
+}
+
+select, input {
+  height: 30px;
+  width: auto;
+  border-radius: 3px;
+}
+
+h2, h3 {
+  padding: 11px;
+}
+
+h2 {
+  font-size: 60px;
+  font-family: "Cookie", sans-serif;
+  font-weight: 400;
+  color: white;
+  background-color: rgb(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+h3 {
+  font-size: 40px;
+}
+
+/*
+  Class Styles
+*/
+
+.hidden {
+  display: none;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer-spacing {
+  height: 150px;
+}
+
+/* Item and item image need to have the same width */
+.item, .item img {
+  width: 250px;
+}
+
+.item {
+  background-color: rgb(231, 208, 178);
+  height: 360px;
+  border-radius: 5px;
+  margin: 10px;
+  margin-top: 80px;
+  margin-bottom: 70px;
+  padding: 10px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.item img {
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.individual {
+  height: 600px;
+  width: 400px;
+}
+
+.cart-item {
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.item-info, .quantity-edit {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.cart-item img {
+  height: 100px;
+  width: 100px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.cart-item p {
+  margin: 0 10px;
+  font-size: 15px;
+  color: #333;
+}
+
+.cart-item button {
+  background-color: #d45555;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 5px;
+  margin-right: 5px;
+  transition: background-color 0.3s;
+}
+
+.cart-item button:hover {
+  background-color: #dd847f;
+}
+
+.cart-item button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.side-column {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* 
+  ID Styles
+*/
+
+#aboutme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: black;
+  width: 65%;
+  height: auto;
+  margin: auto;
+  margin-top: 300px;
+  margin-bottom: 100px;
+  padding-top: 75px;
+  padding-bottom: 75px;
+  border-radius: 30px;
+  box-shadow: 0 0 30px palevioletred;
+}
+
+#title > h1 {
+  color: white;
+  font-weight: 400;
+  font-family: "Cookie", sans-serif;
+  font-size: 100px;
+  margin-top: 90px;
+  margin-bottom: 90px;
+}
+
+#about-text {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin-left: 100px;
+  margin-right: 30px;
+  font-weight: 400;
+  font-size: 20px;
+  font-family: "Architects Daughter", cursive;
+  font-style: normal;
+  color: rgb(28, 28, 28);
+}
+
+#pfp {
+  width: 35%;
+  height: auto;
+  margin-left: 70px;
+  border-radius: 200px;
+}
+
+#home-order-btn {
+  background-color: transparent;
+  color: white;
+  height: 60px;
+  width: 10%;
+  font-family: "Architects Daughter", cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#home-order-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+#order-organizer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#price-total {
+  padding: 50px;
+}
+
+#cart-page > p {
+  color: white;
+  font-weight: 400;
+}
+
+#dessert-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+#search-section {
+  display: flex;
+}
+
+#search-section > button {
+  height: 37px;
+  width: 70px;
+  background-color: rgb(249, 224, 187);
+}
+
+#search-section > button:hover {
+  filter: brightness(90%);
+  cursor: pointer;
+}
+
+#search-section > input {
+  height: 30px;
+  width: 300px;
+}
+
+#item-details {
+  background-color: beige;
+  margin-left: 100px;
+  margin-right: 100px;
+  border-radius: 15px;
+  padding: 20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+#gen-dessert{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75%;
+  max-height: 450px;
+  padding: 50px;
+  border-radius: 75px;
+}
+
+#item-order-btn {
+  background-color: white;
+  color: black;
+  height: 60px;
+  width: 10%;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+#item-order-btn:hover {
+  filter: brightness(90%);
+  cursor: pointer;
+}
+
+#history-container {
+  background-color: antiquewhite;
+}
+
+#radio-container {
+  margin-top: 15px;
+  background-color: burlywood;
+  padding: 8px;
+  border-radius: 12px;
+}
+
+#deselect-btn {
+  background-color: rgb(214, 131, 131);
+  margin-left: 10px;
+  height: 20px;
+  width: 70px;
+}
+
+#deselect-btn:hover {
+  background-color: rgb(215, 115, 115);
+  cursor: pointer;
+}
+
+#customization-input {
+  height: 100px;
+  width: 350px;
+  margin-left: 11px;
+  text-align: left;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+
+#quantity-label, #custom-label {
+  margin-left: 50px;
+}
+
+#price-total {
+  background-color: beige;
+}
+
+#submit-btn {
+  padding: 10px 20px;
+}
+
+#form-container, #login-form-container {
+  border-radius: 5px;
+}
+
+#profile-btn {
+  background-image: url('img/profile.png');
+  padding-top: 2px;
+  padding-bottom: 2px;
+  width: 40px;
+}
+
+/* Home icons created by Dave Gandy - Flaticon: https://www.flaticon.com/free-icon/home_25694 */
+#logo-btn {
+  background-image: url('img/home.png');
+}
+
+#cart-btn {
+  background-image: url('img/cart.png');
+}
+
+#instagram-btn {
+  background-image: url('img/instagram.png');
+}
+
+#order-page {
+  flex: 1;
+}
+
+/* #order-home-btn {
+  margin-bottom: 70px;
+}
+
+#add-items {
+  margin-bottom: 21px;
+}
+
+#item-cart {
+  background-color: beige;
+  padding-top: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+  width: 700px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+#empty-cart > p, #cart-page > h2 {
+  font-size: 50px;
+  color: whitesmoke;
+} */
+
+/* #form-container, #login-form-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+} */
+
+#to-cart-btn, #clear-cart, #checkout {
+  margin-top: 30px;
+  height: 50px;
+  width: 200px;
+  background-color: #d276c9;
+  border-radius: 10px;
+  font-size: 20px;
+  transition: transform 0.28s ease;
+}
+
+/* 
+  Other Styles
+*/
+
+/* Special card animations */
+.item:hover, #to-cart:hover, #checkout:hover, #clear-cart:hover {
+  filter: brightness(85%);
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgb(243, 226, 202);
+}
