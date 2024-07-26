@@ -98,7 +98,7 @@
     if (LOCAL) {
       // Practically should only be used for testing purposes
       try {
-        let response = await fetch("/localdata/local-dessertData.json");
+        let response = await fetch("/localdata/local-DessertData.json");
         await statusCheck(response);
         let result = await response.json();
         id('dessert-list').innerHTML = '';

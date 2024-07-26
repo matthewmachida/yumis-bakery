@@ -418,7 +418,10 @@ h3 {
 
 /* Home icons created by Dave Gandy - Flaticon: https://www.flaticon.com/free-icon/home_25694 */
 #logo-btn {
+  /* The icons from Flaticon are usually 512 x 512 pixels
+  The sizing works appropriately with these dimentions */
   background-image: url('img/home.png');
+  background-size: 75%;
 }
 
 #cart-btn {
@@ -428,11 +431,13 @@ h3 {
 /* Contact us icons created by Uniconlabs - Flaticon: https://www.flaticon.com/free-icon/contact-us_7269995 */
 #contact-btn {
   background-image: url('img/contact.png');
+  background-size: 75%;
 }
 
 /* Instagram logo icons created by Freepik - Flaticon: https://www.flaticon.com/free-icon/instagram_1384063?related_id=1384031&origin=search */
 #instagram-btn {
   background-image: url('img/instagram.png');
+  background-size: 75%;
 }
 
 #order-page {
