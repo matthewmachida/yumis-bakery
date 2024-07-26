@@ -10,6 +10,8 @@
 "use strict";
 (function() {
 
+  const LOCAL = true;
+
   // Names for all of the pages the website has. Used for swapping views
   const HOME = "home-page";
   const ORDER = "order-page";
@@ -93,17 +95,33 @@
    * Loads the avaialble baked goods for purchase
    */
   async function loadRecipes() {
-    try {
-      let response = await fetch(RECIPE_MATCHES);
-      await statusCheck(response);
-      let result = await response.json();
-      id('dessert-list').innerHTML = '';
-      result.forEach(dessert => {
-        let itemCard = genItemCard(dessert)
-        id('dessert-list').append(itemCard);
-      });
-    } catch (err) {
-      console.error(err);
+    if (LOCAL) {
+      // Practically should only be used for testing purposes
+      try {
+        let response = await fetch("/localdata/local-dessertData.json");
+        await statusCheck(response);
+        let result = await response.json();
+        id('dessert-list').innerHTML = '';
+        result.forEach(dessert => {
+          let itemCard = genItemCard(dessert)
+          id('dessert-list').append(itemCard);
+        });
+      } catch (err) {
+        console.error(err);
+      }
+    } else {
+      try {
+        let response = await fetch(RECIPE_MATCHES);
+        await statusCheck(response);
+        let result = await response.json();
+        id('dessert-list').innerHTML = '';
+        result.forEach(dessert => {
+          let itemCard = genItemCard(dessert)
+          id('dessert-list').append(itemCard);
+        });
+      } catch (err) {
+        console.error(err);
+      }
     }
   }
 
@@ -137,16 +155,16 @@
     return article;
   }
 
-  /**
-   * Redisplays all the purchasable items
-   */
-  function showAll (){
-    let displayed = qsa('.item');
-    displayed.forEach(card => {
-      card.classList.remove('hidden');
-    });
-  }
-
+  // /**
+  //  * Redisplays all the purchasable items
+  //  */
+  // function showAll (){
+  //   let displayed = qsa('.item');
+  //   displayed.forEach(card => {
+  //     card.classList.remove('hidden');
+  //   });
+  // }
+  
   // /**
   //  * Searches and filters item based on radiobuttons selected or keywords entered
   //  * in the searchbar
@@ -196,17 +214,32 @@
    * @param {string} itemName name of the item the user selected
    */
   async function getSpecificItem(itemName){
-    try {
-      let response = await fetch(RECIPE_MATCHES + '?dessert=' + itemName);
-      await statusCheck(response);
-      let result = await response.json();
+    if (LOCAL) {
+      try {
+        let response = await fetch('/localdata/local-' + itemName + '.json');
+        await statusCheck(response);
+        let result = await response.json();
+  
+        id("flavor-select").innerHTML = "";
+        displayItemDetails(result, itemName);
+  
+        switchPages(ITEM);
+      } catch (err) {
+        console.error(err);
+      }
+    } else {
+      try {
+        let response = await fetch(RECIPE_MATCHES + '?dessert=' + itemName);
+        await statusCheck(response);
+        let result = await response.json();
 
-      id("flavor-select").innerHTML = "";
-      displayItemDetails(result, itemName);
+        id("flavor-select").innerHTML = "";
+        displayItemDetails(result, itemName);
 
-      switchPages(ITEM);
-    } catch (err) {
-      console.error(err);
+        switchPages(ITEM);
+      } catch (err) {
+        console.error(err);
+      }
     }
   }
 

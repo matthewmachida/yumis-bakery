@@ -1,0 +1,23 @@
+{
+  "name": "Cookies",
+  "img": "cookie.png",
+  "flavors": [
+    {
+      "flavor": "Chocolate Chip",
+      "price": 2
+    },
+    {
+      "flavor": "Gochu Jang",
+      "price": 2.5
+    },
+    {
+      "flavor": "Earl Gray",
+      "price": 2.5
+    },
+    {
+      "flavor": "Matcha",
+      "price": 2.5
+    }
+  ],
+  "max": 12
+}

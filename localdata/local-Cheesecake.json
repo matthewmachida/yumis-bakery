@@ -1,0 +1,15 @@
+{
+  "name": "Cheesecake",
+  "img": "cheesecake1.png",
+  "flavors": [
+    {
+      "flavor": "NewYork Style",
+      "price": 30
+    },
+    {
+      "flavor": "Matcha",
+      "price": 30
+    }
+  ],
+  "max": 1
+}
