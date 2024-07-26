@@ -425,6 +425,11 @@ h3 {
   background-image: url('img/cart.png');
 }
 
+/* Contact us icons created by Uniconlabs - Flaticon: https://www.flaticon.com/free-icon/contact-us_7269995 */
+#contact-btn {
+  background-image: url('img/contact.png');
+}
+
 /* Instagram logo icons created by Freepik - Flaticon: https://www.flaticon.com/free-icon/instagram_1384063?related_id=1384031&origin=search */
 #instagram-btn {
   background-image: url('img/instagram.png');

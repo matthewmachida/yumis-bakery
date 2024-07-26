@@ -87,7 +87,7 @@
       alert("Surprise! this doesn't work yet 😭")
     });
     id('instagram-btn').addEventListener('click', function() {
-      window.location.href = 'https://www.instagram.com/yumisdesserts/';
+      window.open('https://www.instagram.com/yumisdesserts/');
     });
   }
 
