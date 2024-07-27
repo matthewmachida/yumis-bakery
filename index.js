@@ -98,9 +98,10 @@
     if (LOCAL) {
       // Practically should only be used for testing purposes
       try {
-        let response = await fetch("/localdata/local-DessertData.json");
+        let response = await fetch("/local-data/dessertData.json");
         await statusCheck(response);
         let result = await response.json();
+        console.log(result);
         id('dessert-list').innerHTML = '';
         result.forEach(dessert => {
           let itemCard = genItemCard(dessert)
@@ -216,7 +217,7 @@
   async function getSpecificItem(itemName){
     if (LOCAL) {
       try {
-        let response = await fetch('/localdata/local-' + itemName + '.json');
+        let response = await fetch('/local-data/' + itemName + '.json');
         await statusCheck(response);
         let result = await response.json();
   
