@@ -15,24 +15,11 @@
   // Names for all of the pages the website has. Used for swapping views
   const HOME = "home-page";
   const ORDER = "order-page";
-  // const CART = "cart-page";
-  // const PROFILE = "profile-page";
   const ITEM = "item-page";
-  // const LOGIN_PAGE = "login";
-  // const HISTORY = 'history-page';
-
-  // const TIME = 2000;
-
-  // // keeps track of the current user logged in
-  // let currentUser = '';
+  const CONTACT = "contact-page";
 
   // endpoints constants
   const RECIPE_MATCHES = '/getDesserts';
-  // const SEARCH = '/search';
-  // const CREATE = '/newuser';
-  // const LOGIN = '/login';
-  // const CART_PAGE = '/cart';
-  // const PURCHASE = '/purchase';
 
   // Name of all foods on sale. Will automatically make cards for each food
 
@@ -73,9 +60,17 @@
    * page. ANY BUTTONS WITHOUT FUNCTIONALITY ARE YET TO BE IMPLEMENTED
    */
   function activateButtons() {
+    // Top bar icons
     id("logo-btn").addEventListener("click", () => {
       switchPages(HOME);
     });
+    id('contact-btn').addEventListener("click", () => {
+      switchPages(CONTACT);
+    });
+    id('instagram-btn').addEventListener('click', function() {
+      window.open('https://www.instagram.com/yumisdesserts/');
+    });
+
     id("home-order-btn").addEventListener("click", () => {
       loadRecipes();
       switchPages(ORDER);
@@ -85,9 +80,6 @@
     });
     id("to-cart-btn").addEventListener("click", () => {
       alert("Surprise! this doesn't work yet 😭")
-    });
-    id('instagram-btn').addEventListener('click', function() {
-      window.open('https://www.instagram.com/yumisdesserts/');
     });
   }
 
@@ -100,7 +92,7 @@
       if (!LOCAL) {
         response = await fetch(RECIPE_MATCHES);
       } else {
-        response = await fetch("./local-data/dessertData.json");
+        response = await fetch("/yumis-bakery/local-data/dessertData.json");
       }
       await statusCheck(response);
       let result = await response.json();
@@ -209,7 +201,7 @@
         if (!LOCAL) {
           response = await fetch(RECIPE_MATCHES + '?dessert=' + itemName);
         } else {
-          response = await fetch('./local-data/' + itemName + '.json');
+          response = await fetch('/yumis-bakery/local-data/' + itemName + '.json');
         }
         await statusCheck(response);
         let result = await response.json();
