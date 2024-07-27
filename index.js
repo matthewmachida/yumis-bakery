@@ -100,7 +100,7 @@
       if (!LOCAL) {
         response = await fetch(RECIPE_MATCHES);
       } else {
-        response = await fetch("/local-data/dessertData.json");
+        response = await fetch("./local-data/dessertData.json");
       }
       await statusCheck(response);
       let result = await response.json();
@@ -209,7 +209,7 @@
         if (!LOCAL) {
           response = await fetch(RECIPE_MATCHES + '?dessert=' + itemName);
         } else {
-          response = await fetch('/local-data/' + itemName + '.json');
+          response = await fetch('./local-data/' + itemName + '.json');
         }
         await statusCheck(response);
         let result = await response.json();
