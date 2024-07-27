@@ -88,10 +88,11 @@
    */
   async function loadRecipes() {
     try {
-      // Practically should only be used for testing purposes
+      let response;
       if (!LOCAL) {
         response = await fetch(RECIPE_MATCHES);
       } else {
+        // Practically should only be used for testing purposes
         response = await fetch("/yumis-bakery/local-data/dessertData.json");
       }
       await statusCheck(response);
@@ -201,6 +202,7 @@
         if (!LOCAL) {
           response = await fetch(RECIPE_MATCHES + '?dessert=' + itemName);
         } else {
+          // Practically should only be used for testing purposes
           response = await fetch('/yumis-bakery/local-data/' + itemName + '.json');
         }
         await statusCheck(response);
