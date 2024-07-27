@@ -1,0 +1,27 @@
+{
+  "name": "Donuts",
+  "img": "donut.png",
+  "flavors": [
+    {
+      "flavor": "Classic Glazed",
+      "price": 3.5
+    },
+    {
+      "flavor": "Strawberry",
+      "price": 3.5
+    },
+    {
+      "flavor": "Black Sesame",
+      "price": 3.5
+    },
+    {
+      "flavor": "Matcha",
+      "price": 3.5
+    },
+    {
+      "flavor": "Earl Gray",
+      "price": 3.5
+    }
+  ],
+  "max": 6
+}

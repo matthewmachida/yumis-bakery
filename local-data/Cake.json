@@ -1,0 +1,23 @@
+{
+  "name": "Cake",
+  "img": "cake3.png",
+  "flavors": [
+    {
+      "flavor": "Vanilla",
+      "price": 30
+    },
+    {
+      "flavor": "Chocolate",
+      "price": 30
+    },
+    {
+      "flavor": "Red Velvet",
+      "price": 30
+    },
+    {
+      "flavor": "Tiramisu",
+      "price": 35
+    }
+  ],
+  "max": 1
+}

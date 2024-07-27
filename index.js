@@ -95,34 +95,23 @@
    * Loads the avaialble baked goods for purchase
    */
   async function loadRecipes() {
-    if (LOCAL) {
+    try {
       // Practically should only be used for testing purposes
-      try {
-        let response = await fetch("/local-data/dessertData.json");
-        await statusCheck(response);
-        let result = await response.json();
-        console.log(result);
-        id('dessert-list').innerHTML = '';
-        result.forEach(dessert => {
-          let itemCard = genItemCard(dessert)
-          id('dessert-list').append(itemCard);
-        });
-      } catch (err) {
-        console.error(err);
+      if (!LOCAL) {
+        response = await fetch(RECIPE_MATCHES);
+      } else {
+        response = await fetch("/local-data/dessertData.json");
       }
-    } else {
-      try {
-        let response = await fetch(RECIPE_MATCHES);
-        await statusCheck(response);
-        let result = await response.json();
-        id('dessert-list').innerHTML = '';
-        result.forEach(dessert => {
-          let itemCard = genItemCard(dessert)
-          id('dessert-list').append(itemCard);
-        });
-      } catch (err) {
-        console.error(err);
-      }
+      await statusCheck(response);
+      let result = await response.json();
+      console.log(result);
+      id('dessert-list').innerHTML = '';
+      result.forEach(dessert => {
+        let itemCard = genItemCard(dessert)
+        id('dessert-list').append(itemCard);
+      });
+    } catch (err) {
+      console.error(err);
     }
   }
 
@@ -215,9 +204,13 @@
    * @param {string} itemName name of the item the user selected
    */
   async function getSpecificItem(itemName){
-    if (LOCAL) {
       try {
-        let response = await fetch('/local-data/' + itemName + '.json');
+        let response;
+        if (!LOCAL) {
+          response = await fetch(RECIPE_MATCHES + '?dessert=' + itemName);
+        } else {
+          response = await fetch('/local-data/' + itemName + '.json');
+        }
         await statusCheck(response);
         let result = await response.json();
   
@@ -228,20 +221,6 @@
       } catch (err) {
         console.error(err);
       }
-    } else {
-      try {
-        let response = await fetch(RECIPE_MATCHES + '?dessert=' + itemName);
-        await statusCheck(response);
-        let result = await response.json();
-
-        id("flavor-select").innerHTML = "";
-        displayItemDetails(result, itemName);
-
-        switchPages(ITEM);
-      } catch (err) {
-        console.error(err);
-      }
-    }
   }
 
   /**
