@@ -33,7 +33,6 @@
 
     let items = qsa(".item");
     for (let i = 0; i < items.length; i++) {
-      console.log("item");
       items[i].addEventListener("click", handleItem);
     }
   }
@@ -94,10 +93,10 @@
       } else {
         // Practically should only be used for testing purposes
         response = await fetch("/yumis-bakery/local-data/dessertData.json");
+        // response = await fetch("/local-data/dessertData.json");  // Only for testing with node
       }
       await statusCheck(response);
       let result = await response.json();
-      console.log(result);
       id('dessert-list').innerHTML = '';
       result.forEach(dessert => {
         let itemCard = genItemCard(dessert)
@@ -204,6 +203,7 @@
         } else {
           // Practically should only be used for testing purposes
           response = await fetch('/yumis-bakery/local-data/' + itemName + '.json');
+          // response = await fetch('/local-data/' + itemName + '.json');  // Only for testing with node
         }
         await statusCheck(response);
         let result = await response.json();

@@ -89,18 +89,17 @@
         <br>
         <br>
       </section>
-      <div class="footer-spacing"></div>
     </section>
 
     <section id="item-page" class="hidden">
       <div class="center">
         <h2 id="item-type"></h2>
       </div>
-      <section>
-        <article class="side-column">
+      <section class="side-column">
+        <article>
           <img id="gen-dessert">
         </article>
-        <article class="side-column" id="item-details">
+        <article id="item-details">
           <div>
             <label for="flavor-select">Flavor:</label>
             <select id="flavor-select"></select>
@@ -124,15 +123,65 @@
       <br>
       <button id="item-order-btn">Go Back</button>
       <br>
-      <div class="footer-spacing"></div>
     </section>
 
-    <section id="contact-page" class="hidden">
-      <article id="contact-info" class="side-column">
-        <h3>Contact Info</h3>
-      </article>
+    <section id="contact-page" class="side-column hidden">
+      <section>
+        <h2>Email Form</h2>
+        <article id="contact-form">
+          <form id="profile-form" action="#" method="post">
+            <section class="form-group">
+              <label for="form-name">Your name:</label>
+              <input type="text" id="form-name" name="name" required>
+            </section>
+            <section class="form-group">
+              <label for="form-email">Email:</label>
+              <input type="email" id="form-email" name="email" required>
+            </section>
+            <section class="form-group">
+              <label for="form-message">Message:</label>
+              <textarea 
+                class="form-group"
+                id="form-message"
+                name="message"
+                rows="6"
+                cols="50"
+                placeholder="Message:"
+                required
+              >
+                
+              </textarea>
+            </section>
+            <button type="submit" id="submit-btn">Submit</button>
+          </form>
+        </article>
+      </section>
+      <section>
+        <h2>Contact Info</h2>
+        <article id="contact-info">
+          <div class="side-column">
+            <img src="img/phoneicon.png" id="phone-icon">
+            <p>
+              Phone number
+            </p>
+          </div>
+          <div class="side-column">
+            <img src="img/mailicon.png" id="mail-icon">
+            <p>
+              Email
+            </p>
+          </div>
+          <div class="side-column">
+            <img src="img/locationicon.png" id="location-icon">
+            <p>
+              Location
+            </p>
+          </div>
+        </article>
+      </section>
     </section>
 
+    <div class="footer-spacing"></div>
     <footer>
       <!--
         CONTACT INFORMATION, API CITATIONS, CREDITS AND COPYRIGHT, ETC

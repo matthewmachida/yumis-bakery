@@ -96,10 +96,6 @@ h3 {
   Class Styles
 */
 
-.hidden {
-  display: none;
-}
-
 .center {
   display: flex;
   align-items: center;
@@ -204,8 +200,10 @@ h3 {
 }
 
 .side-column {
-  display: inline-block;
-  vertical-align: middle;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
 }
 
 /* 
@@ -261,7 +259,7 @@ h3 {
 #home-order-btn {
   background-color: transparent;
   color: white;
-  height: 60px;
+  height: auto;
   width: 10%;
   font-family: "Architects Daughter", cursive;
   font-style: normal;
@@ -361,10 +359,6 @@ h3 {
   cursor: pointer;
 }
 
-#history-container {
-  background-color: antiquewhite;
-}
-
 #radio-container {
   margin-top: 15px;
   background-color: burlywood;
@@ -440,49 +434,39 @@ h3 {
   background-size: 60%;
 }
 
+/* Phone icons created by Freepik - Flaticon: https://www.flaticon.com/free-icon/smartphone-call_15874?term=phone&page=1&position=8&origin=tag&related_id=15874 */
+/* Email icons created by Freepik - Flaticon: https://www.flaticon.com/free-icon/mail_646094?term=mail&page=1&position=3&origin=search&related_id=646094 */
+/* Location icons created by Freepik - Flaticon: https://www.flaticon.com/free-icon/location_535239?term=location&page=1&position=1&origin=search&related_id=535239 */
+#phone-icon, #mail-icon, #location-icon {
+  width: 5%;
+  padding: 10px;
+}
+
 #order-page {
   flex: 1;
 }
 
-/* #order-home-btn {
-  margin-bottom: 70px;
-}
-
-#add-items {
-  margin-bottom: 21px;
-}
-
-#item-cart {
+#contact-info, #contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: beige;
-  padding-top: 10px;
-  padding-left: 40px;
-  padding-right: 40px;
-  width: 700px;
-  margin: 0 auto;
-  border-radius: 10px;
+  padding: 15px;
+  border-radius: 15px;
 }
 
-#empty-cart > p, #cart-page > h2 {
-  font-size: 50px;
-  color: whitesmoke;
-} */
+#contact-info > div {
+  justify-content: flex-start;
+}
 
-/* #form-container, #login-form-container {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #fff;
+#contact-form {
+  /* max-width: 400px; */
+  /* margin: 50px auto; */
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-} */
+}
 
-#to-cart-btn, #clear-cart, #checkout {
-  margin-top: 30px;
-  height: 50px;
-  width: 200px;
-  background-color: #d276c9;
-  border-radius: 10px;
-  font-size: 20px;
-  transition: transform 0.28s ease;
+#contact-form textarea {
+  resize: none;
 }
 
 /* 
@@ -494,4 +478,9 @@ h3 {
   filter: brightness(85%);
   transform: translateY(-3px);
   box-shadow: 0 0 20px rgb(243, 226, 202);
+}
+
+/* Must take priority */
+.hidden {
+  display: none;
 }
