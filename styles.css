@@ -210,6 +210,14 @@ h3 {
   ID Styles
 */
 
+#title {
+  color: white;
+  font-weight: 400;
+  font-family: "Cookie", sans-serif;
+  font-size: 100px;
+  margin: 90px;
+}
+
 #aboutme {
   display: flex;
   align-items: center;
@@ -221,32 +229,21 @@ h3 {
   margin: auto;
   margin-top: 300px;
   margin-bottom: 100px;
-  padding-top: 75px;
-  padding-bottom: 75px;
+  padding: 75px;
   border-radius: 30px;
   box-shadow: 0 0 30px palevioletred;
 }
 
-#title > h1 {
-  color: white;
-  font-weight: 400;
-  font-family: "Cookie", sans-serif;
-  font-size: 100px;
-  margin-top: 90px;
-  margin-bottom: 90px;
-}
-
 #about-text {
   display: flex;
-  flex-direction: column;
-  color: white;
-  margin-left: 100px;
-  margin-right: 30px;
-  font-weight: 400;
-  font-size: 20px;
+  flex-direction: column; 
   font-family: "Architects Daughter", cursive;
   font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
   color: rgb(28, 28, 28);
+  margin-left: 100px;
+  margin-right: 30px;
 }
 
 #pfp {
@@ -286,11 +283,6 @@ h3 {
 
 #price-total {
   padding: 50px;
-}
-
-#cart-page > p {
-  color: white;
-  font-weight: 400;
 }
 
 #dessert-list {
@@ -395,10 +387,6 @@ h3 {
   background-color: beige;
 }
 
-#submit-btn {
-  padding: 10px 20px;
-}
-
 #form-container, #login-form-container {
   border-radius: 5px;
 }
@@ -460,13 +448,36 @@ h3 {
 }
 
 #contact-form {
-  /* max-width: 400px; */
-  /* margin: 50px auto; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 }
 
 #contact-form textarea {
   resize: none;
+}
+
+#contact-memo {
+  max-width: 60%;
+}
+
+#submit-btn {
+  width: 25%;
+  height: auto;
+  background-color: #d45555;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 5px;
+  margin-right: 5px;
+  transition: background-color 0.3s;
+}
+
+#submit-btn:hover {
+  background-color: #dd847f;
 }
 
 /* 

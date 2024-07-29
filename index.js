@@ -92,8 +92,8 @@
         response = await fetch(RECIPE_MATCHES);
       } else {
         // Practically should only be used for testing purposes
-        response = await fetch("/yumis-bakery/local-data/dessertData.json");
-        // response = await fetch("/local-data/dessertData.json");  // Only for testing with node
+        //response = await fetch("/yumis-bakery/local-data/dessertData.json");
+        response = await fetch("/local-data/dessertData.json");  // Only for testing with node
       }
       await statusCheck(response);
       let result = await response.json();
@@ -202,8 +202,8 @@
           response = await fetch(RECIPE_MATCHES + '?dessert=' + itemName);
         } else {
           // Practically should only be used for testing purposes
-          response = await fetch('/yumis-bakery/local-data/' + itemName + '.json');
-          // response = await fetch('/local-data/' + itemName + '.json');  // Only for testing with node
+          //response = await fetch('/yumis-bakery/local-data/' + itemName + '.json');
+          response = await fetch('/local-data/' + itemName + '.json');  // Only for testing with node
         }
         await statusCheck(response);
         let result = await response.json();
