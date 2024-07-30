@@ -10,7 +10,7 @@
 "use strict";
 (function() {
 
-  const LOCAL = true;
+  const LOCAL = false;
 
   // Names for all of the pages the website has. Used for swapping views
   const HOME = "home-page";
@@ -89,11 +89,11 @@
     try {
       let response;
       if (!LOCAL) {
-        response = await fetch(RECIPE_MATCHES);
+        // response = await fetch(RECIPE_MATCHES);
+        response = await fetch("/local-data/dessertData.json");  // Only for testing with node
       } else {
         // Practically should only be used for testing purposes
-        //response = await fetch("/yumis-bakery/local-data/dessertData.json");
-        response = await fetch("/local-data/dessertData.json");  // Only for testing with node
+        response = await fetch("/yumis-bakery/local-data/dessertData.json");
       }
       await statusCheck(response);
       let result = await response.json();
@@ -199,11 +199,11 @@
       try {
         let response;
         if (!LOCAL) {
-          response = await fetch(RECIPE_MATCHES + '?dessert=' + itemName);
+          // response = await fetch(RECIPE_MATCHES + '?dessert=' + itemName);
+          response = await fetch('/local-data/' + itemName + '.json');  // Only for testing with node
         } else {
           // Practically should only be used for testing purposes
-          //response = await fetch('/yumis-bakery/local-data/' + itemName + '.json');
-          response = await fetch('/local-data/' + itemName + '.json');  // Only for testing with node
+          response = await fetch('/yumis-bakery/local-data/' + itemName + '.json');
         }
         await statusCheck(response);
         let result = await response.json();
