@@ -10,7 +10,7 @@
 "use strict";
 (function() {
 
-  const LOCAL = false;
+  const LOCAL = true;
 
   // Names for all of the pages the website has. Used for swapping views
   const HOME = "home-page";
