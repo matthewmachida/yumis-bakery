@@ -30,33 +30,11 @@
    */
   function init() {
     activateButtons();
-
-    let items = qsa(".item");
-    for (let i = 0; i < items.length; i++) {
-      items[i].addEventListener("click", handleItem);
-    }
-  }
-
-  /**
-   * Switches the user view to the specified page. Hides the current page and
-   * displays the new one in its place
-   * @param {string} pageName The name of the page to switch to. Must be a
-   *                          page nae specified by a constant value
-   */
-  function switchPages(pageName) {
-    let currentPage = qs(".viewing");
-    currentPage.classList.add("hidden");
-    currentPage.classList.remove("viewing");
-
-    let nextPage = id(pageName);
-    nextPage.classList.remove("hidden");
-    nextPage.classList.add("viewing");
   }
 
   /**
    * Adds functionality to all buttons on screen, including header buttons
-   * and buttons on each page. Each button navigates to a predetermined
-   * page. ANY BUTTONS WITHOUT FUNCTIONALITY ARE YET TO BE IMPLEMENTED
+   * and buttons on each page. Each button navigates to a predetermined page.
    */
   function activateButtons() {
     // Top bar icons
@@ -80,6 +58,22 @@
     id("to-cart-btn").addEventListener("click", () => {
       alert("Surprise! this doesn't work yet 😭")
     });
+  }
+
+  /**
+   * Switches the user view to the specified page. Hides the current page and
+   * displays the new one in its place
+   * @param {string} pageName The name of the page to switch to. Must be a
+   *                          page nae specified by a constant value
+   */
+  function switchPages(pageName) {
+    let currentPage = qs(".viewing");
+    currentPage.classList.add("hidden");
+    currentPage.classList.remove("viewing");
+
+    let nextPage = id(pageName);
+    nextPage.classList.remove("hidden");
+    nextPage.classList.add("viewing");
   }
 
   /**
@@ -256,7 +250,7 @@
     const selectedData = data.flavors.find(flavor => flavor.flavor === selectedFlavor);
     const quantity = parseInt(id('quantity-input').value);
     let price = selectedData.price * quantity;
-    price = (isNaN(price))? "0":price + "";
+    price = (isNaN(price))? "0" : price + "";
     if (price.indexOf(".") >= 0) {
       price += "0"
     } else {
@@ -289,15 +283,6 @@
       throw new Error(await res.text());
     }
     return res;
-  }
-
-  /**
-   * TEMPORARY COMMENT: UPDATE ONCE IMPLEMENTED
-   * @param {Event} evt Event
-   * @return {string} evt.id
-   */
-  function handleItem(evt) {
-    return evt.id;
   }
 
   /**
