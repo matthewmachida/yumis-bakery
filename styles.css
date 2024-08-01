@@ -24,21 +24,19 @@ body {
   text-align: center;
   margin: 0px;
   position: relative;
-  min-height: 100vh;
 }
 
 header {
   display: flex;
   align-items: center;
   padding: 10px 20px;
-  height: 65px;
-  justify-content: flex-end;
-  /* margin-top: 20px; */
+  height: 7vh;
+  justify-content: space-between;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* Specifically for the icon buttons in the top menu bar */
-header > button {
+header button {
   background-size: 85%;
   background-repeat: no-repeat;
   background-position: center;
@@ -209,6 +207,10 @@ h3 {
 /* 
   ID Styles
 */
+
+#title-section {
+  height: 100vh - 7vh; /* must be the compliment of the header's height */
+}
 
 #title {
   color: white;
