@@ -209,7 +209,7 @@ h3 {
 */
 
 #title-section {
-  height: 100vh - 7vh; /* must be the compliment of the header's height */
+  height: 93vh; /* must be the compliment of the header's height */
 }
 
 #title {
