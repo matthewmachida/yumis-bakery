@@ -51,8 +51,6 @@
         <!--Include order form, about me, etc.-->
         <button id="home-order-btn">Order Here!</button>
       </section>
-      
-      <br>
       <!--Short bio and story-->
       <article id="aboutme">
         <img id="pfp" src="img/yumipfp.png" alt="picture of me">
@@ -104,25 +102,23 @@
       </div>
       <section class="side-column">
         <article>
-          <img id="gen-dessert">
+          <img id="dessert-sample-img">
         </article>
         <article id="item-details">
           <div>
-            <label for="flavor-select">Flavor:</label>
-            <select id="flavor-select"></select>
-    
-            <label for="quantity-input" id="quantity-label">Quantity:</label>
-            <input type="number" id="quantity-input" min="1" max="12" value="1">
-    
-            <p>Total Price:</p>
-            <p id="price-display"></p>
+            <label for="flavor-input">Flavor:</label>
+            <select id="flavor-input"></select>
+
+            <label for="quantity-input">Quantity:</label>
+            <input id="quantity-input" type="number" min="1" max="12" value="1">
+            <br>
+
+            <p id="price-display">Total Price:</p>
     
             <label for="customization-input" id="custom-label">Customization:</label>
             <textarea id="customization-input"> </textarea>
           </div>
-          
-          <!-- <p>Made By: Yumi Park</p> -->
-  
+          <br>
           <button id="to-cart-btn">Add to Cart</button>
         </article>
       </section>

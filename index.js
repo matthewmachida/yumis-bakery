@@ -10,7 +10,7 @@
 "use strict";
 (function() {
 
-  const LOCAL = true;
+  const LOCAL = false;
 
   // Names for all of the pages the website has. Used for swapping views
   const HOME = "home-page";
@@ -202,7 +202,7 @@
         await statusCheck(response);
         let result = await response.json();
   
-        id("flavor-select").innerHTML = "";
+        id("flavor-input").innerHTML = "";
         displayItemDetails(result, itemName);
   
         switchPages(ITEM);
@@ -223,17 +223,17 @@
       const option = document.createElement('option');
       option.value = data.flavors[i].flavor;
       option.textContent = data.flavors[i].flavor;
-      id('flavor-select').appendChild(option);
+      id('flavor-input').appendChild(option);
     }
 
     // Add image, price, and title text
-    id('gen-dessert').src = 'img/' + data.img;
+    id('dessert-sample-img').src = 'img/' + data.img;
     id('quantity-input').max = data.max;
     id('item-type').textContent = name;
 
     // Continually update the total price based on the current flavor and amount selected
     updatePrice(data);
-    id('flavor-select').addEventListener('change', function() {
+    id('flavor-input').addEventListener('change', function() {
       updatePrice(data);
     });
     id('quantity-input').addEventListener('input', function() {
@@ -246,7 +246,7 @@
    * @param {object} data containing all the data about the item and its attributes
    */
   function updatePrice(data) {
-    const selectedFlavor = id('flavor-select').value;
+    const selectedFlavor = id('flavor-input').value;
     const selectedData = data.flavors.find(flavor => flavor.flavor === selectedFlavor);
     const quantity = parseInt(id('quantity-input').value);
     let price = selectedData.price * quantity;
@@ -256,7 +256,7 @@
     } else {
       price += ".00";
     }
-    id('price-display').textContent = "$" + price;
+    id('price-display').textContent = "Total Price: $" + price;
   }
 
   /**
