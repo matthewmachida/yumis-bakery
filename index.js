@@ -10,7 +10,8 @@
 "use strict";
 (function() {
 
-  const LOCAL = false;
+  // Note for GitHub pages, this must be set to true for functionality
+  const LOCAL = true;
 
   // Names for all of the pages the website has. Used for swapping views
   const HOME = "home-page";
