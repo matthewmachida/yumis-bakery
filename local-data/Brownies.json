@@ -1,0 +1,19 @@
+{
+  "name": "Brownies",
+  "img": "brownie1.png",
+  "flavors": [
+    {
+      "flavor": "Classic Chocolate",
+      "price": 1.5
+    },
+    {
+      "flavor": "Matcha",
+      "price": 1.75
+    },
+    {
+      "flavor": "Mochi Chocolate",
+      "price": 2
+    }
+  ],
+  "max": 12
+}

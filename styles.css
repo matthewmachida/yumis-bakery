@@ -117,6 +117,10 @@ h3 {
   flex-direction: column;
 }
 
+.spacer {
+  height: 10vh;
+}
+
 .side-column {
   display: flex;
   justify-content: center;
@@ -149,11 +153,6 @@ h3 {
   height: 300px;
   object-fit: cover;
   border-radius: 10px;
-}
-
-.individual {
-  height: 600px;
-  width: 400px;
 }
 
 .cart-item {
@@ -265,16 +264,19 @@ h3 {
 }
 
 #title-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 93vh; /* must be the compliment of the header's height */
-  position: relative;
 }
 
 #title {
   color: white;
   font-weight: 400;
   font-family: "Cookie", sans-serif;
-  font-size: 100px;
-  margin: 90px;
+  font-size: 15vh;
+  margin: 10vh;
 }
 
 #aboutme {
@@ -370,8 +372,6 @@ h3 {
 
 #item-details {
   background-color: beige;
-  /* width: 30vw; */
-  /* height: 50vh; */
   border-radius: 15px;
   padding: 50px;
 }
@@ -452,13 +452,27 @@ h3 {
   flex: 1;
 }
 
+#contact-side, #question-side {
+  width: 35%;
+  margin: 5%;
+}
+
 #contact-info, #contact-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: beige;
-  padding: 15px;
   border-radius: 15px;
+}
+
+#contact-info {
+  font-size: x-large;
+  padding: 15px;
+}
+
+#contact-form {
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 #contact-info > div {
@@ -480,17 +494,18 @@ h3 {
   max-width: 60%;
 }
 
-#submit-btn {
+#submit-btn, #to-cart-btn {
   width: 25%;
   height: auto;
   background-color: #d45555;
   color: white;
+  padding: 15px 10px;
   border: none;
   border-radius: 4px;
-  padding: 5px 10px;
+  margin: 5px;
+  margin-top: 10px;
+  font-size: large;
   cursor: pointer;
-  margin-left: 5px;
-  margin-right: 5px;
   transition: background-color 0.3s;
 }
 
@@ -503,7 +518,7 @@ h3 {
 */
 
 /* Special card animations */
-.item:hover, #to-cart:hover, #checkout:hover, #clear-cart:hover {
+.item:hover, #checkout:hover, #clear-cart:hover { /*, #to-cart-btn:hover { */
   filter: brightness(85%);
   transform: translateY(-3px);
   box-shadow: 0 0 20px rgb(243, 226, 202);

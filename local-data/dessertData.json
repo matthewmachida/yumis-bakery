@@ -8,8 +8,20 @@
     "img": "donut.png"
   },
   {
+    "name": "Macarons",
+    "img": "macaron1.png"
+  },
+  {
+    "name": "Cupcakes",
+    "img": "cupcake1.png"
+  },
+  {
+    "name": "Brownies",
+    "img": "brownie1.png"
+  },
+  {
     "name": "Cake",
-    "img": "cake3.png"
+    "img": "cake5.png"
   },
   {
     "name": "Cheesecake",

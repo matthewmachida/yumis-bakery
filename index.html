@@ -22,7 +22,11 @@
   </head>
   <body>
     <header>
-      <a>🌸</a>
+      <p style="
+        font-size: xx-large;
+      ">
+        🌸
+      </p>
       <!--Profile icon and shopping cart view-->
       <div>
         <button id="logo-btn"></button>
@@ -43,13 +47,14 @@
 
       <!--Title with background image-->
       <section id="title-section">
-        <br>
         <article>
           <h1 id="title"> 🌸 Yumi's Bakery 🌸 </h1>
         </article>
   
         <!--Include order form, about me, etc.-->
         <button id="home-order-btn">Order Here!</button>
+        <div class="spacer"></div>
+        <div class="spacer"></div>
       </section>
       <!--Short bio and story-->
       <article id="aboutme">
@@ -129,7 +134,30 @@
     </section>
 
     <section id="contact-page" class="side-column hidden">
-      <section>
+      <section id="contact-side">
+        <h2>Contact Info</h2>
+        <article id="contact-info">
+          <div class="side-column">
+            <img src="img/phoneicon.png" id="phone-icon">
+            <p>
+              Phone number
+            </p>
+          </div>
+          <div class="side-column">
+            <img src="img/mailicon.png" id="mail-icon">
+            <p>
+              Email
+            </p>
+          </div>
+          <div class="side-column">
+            <img src="img/locationicon.png" id="location-icon">
+            <p>
+              Location
+            </p>
+          </div>
+        </article>
+      </section>
+      <section id="question-side">
         <h2>Have a Question?</h2>
         <article>
           <form id="contact-form" action="#" method="post">
@@ -171,29 +199,6 @@
             </section>
             <button type="submit" id="submit-btn">Submit</button>
           </form>
-        </article>
-      </section>
-      <section>
-        <h2>Contact Info</h2>
-        <article id="contact-info">
-          <div class="side-column">
-            <img src="img/phoneicon.png" id="phone-icon">
-            <p>
-              Phone number
-            </p>
-          </div>
-          <div class="side-column">
-            <img src="img/mailicon.png" id="mail-icon">
-            <p>
-              Email
-            </p>
-          </div>
-          <div class="side-column">
-            <img src="img/locationicon.png" id="location-icon">
-            <p>
-              Location
-            </p>
-          </div>
         </article>
       </section>
     </section>

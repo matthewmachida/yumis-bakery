@@ -1,0 +1,27 @@
+{
+  "name": "Cupcakes",
+  "img": "cupcake1.png",
+  "flavors": [
+    {
+      "flavor": "Vanilla",
+      "price": 2.5
+    },
+    {
+      "flavor": "Chocolate",
+      "price": 2.5
+    },
+    {
+      "flavor": "Red Velvet",
+      "price": 2.5
+    },
+    {
+      "flavor": "Salted Caramel",
+      "price": 2.5
+    },
+    {
+      "flavor": "Ube Mochi",
+      "price": 3.0
+    }
+  ],
+  "max": 12
+}

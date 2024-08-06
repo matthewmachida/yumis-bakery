@@ -1,0 +1,31 @@
+{
+  "name": "Macarons",
+  "img": "macaron1.png",
+  "flavors": [
+    {
+      "flavor": "Chocolate",
+      "price": 2
+    },
+    {
+      "flavor": "Strawberry",
+      "price": 2
+    },
+    {
+      "flavor": "Pistachio",
+      "price": 2
+    },
+    {
+      "flavor": "Guava",
+      "price": 2
+    },
+    {
+      "flavor": "Passionfruit",
+      "price": 2
+    },
+    {
+      "flavor": "Salted Caramel",
+      "price": 2
+    }
+  ],
+  "max": 24
+}
